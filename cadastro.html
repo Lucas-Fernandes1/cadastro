@@ -64,9 +64,14 @@
                 IMC
                 <input type="number" name="" id="outImc" class="form-control" value="" readonly>
             </div>
-            <div class="col-md-4">
-                Pratica atividade física regularmente?
-                <input class="form-control" type="text" value="" id="inAtivFísica" placeholder="Informe a modalidade praticada">
+            <div class="col-md-2">
+                Pratica atividade física regularmente? <br>
+                <input class="form-check-input" type="radio" name="rdAtivFisica" id="rdAtiv" value="sim"> Sim
+                <input class="form-check-input" type="radio" name="rdAtivFisica" id="rdAtiv" value="nao"> Não
+            </div>
+            <div class="col-md-2">
+                Qual?
+                <input type="number" name="" id="inAtiv" class="form-control" value="" readonly>
             </div>
             <div class="col-md-2">
                 Gênero
@@ -81,13 +86,13 @@
         <div class="row">
             <div class="col-md-2">
                 Possui Plano de Saúde? <br>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanoS" value="sim"> Sim
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanon" value="nao"> Não
+                <input class="form-check-input" type="radio" name="rdPlSaude" id="rdPlanoS" value="sim"> Sim
+                <input class="form-check-input" type="radio" name="rdPlSaude" id="rdPlanon" value="nao"> Não
             </div>
             <div class="col-md-2">
                 Já fez cirurgias? <br>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanoS" value="sim"> Sim
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanon" value="nao"> Não
+                <input class="form-check-input" type="radio" name="rdCirurgia" id="rdPlanoS" value="sim"> Sim
+                <input class="form-check-input" type="radio" name="rdCirurgia" id="rdPlanon" value="nao"> Não
             </div>
             <div class="col-md-2">
                 Que procedimento?
@@ -167,15 +172,10 @@
     </div>
     </div>
     
+    <script src="./main/jquery-3.6.0.js"></script>
     <script src="./main/jquery.mask.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./main/mask.js"></script>
     <script src="./main/main.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#telefone').mask('00.000-000');
-        });
-    </script>
 
 </body>
 
