@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Financeiro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-sm">
+        <h2 class="cadastro-tit">Cadastro</h2>
+        <div class="row">
+            <div class="col-md-8">
+                Nome Completo
+                <input type="text" name="" id="" class="form-control">
+            </div>
+            <div class="col-md-3">
+                Data de Nascimento
+                <input type="date" id="inNascimento" class="form-control" onchange="calcularIdade()">
+            </div>
+            <div class="col-md-1">
+                Idade
+                <input type="number" id="outIdade" class="form-control" value="" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Peso
+                <input type="number" id="inPeso" class="form-control">
+            </div>
+            <div class="col-md-2">
+                Altura
+                <input type="number" name="" id="inAltura" class="form-control" onchange="calcularImc()">
+            </div>
+            <div class="col-md-2">
+                IMC
+                <input type="number" name="" id="outImc" class="form-control" value="" readonly>
+            </div>
+            <div class="col-md-4">
+                Pratica atividade física regularmente?
+                <input class="form-control" type="text" value="" id="inAtivFísica" placeholder="Informe a modalidade praticada">
+            </div>
+            <div class="col-md-2">
+                Gênero
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Escolha Seu Gênero</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Feminino</option>
+                    <option value="3">Outro</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Possui Plano de Saúde? <br>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanoS" value="sim"> Sim
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanon" value="nao"> Não
+            </div>
+            <div class="col-md-2">
+                Já fez cirurgias? <br>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanoS" value="sim"> Sim
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdPlanon" value="nao"> Não
+            </div>
+            <div class="col-md-2">
+                Que procedimento?
+                <input type="text" id="infCirurgia" class="form-control" disabled>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                Telefone
+                <input type="tel" id="telefone" class="form-control" placeholder="Somente Números">
+            </div>
+            <div class="col-md-3">
+                E-mail
+                <input type="email" id="" class="form-control">
+            </div>
+            <div class="col-md-3">
+                Endereço
+                <input type="text" id="logradouro" class="form-control">
+            </div>
+            <div class="col-md-1">
+                Nº
+                <input type="number" id="numero" class="form-control">
+            </div>
+            <div class="col-md-2">
+                CEP
+                <input type="text" id="cep" class="form-control" maxlength="8">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                Complemento
+                <input type="text" id="complemento" class="form-control">
+            </div>
+            <div class="col-md-2">
+                Bairro
+                <input type="text" id="bairro" class="form-control">
+            </div>
+            <div class="col-md-2">
+                Estado
+                <select class="form-control" id="slEstados" onchange="preencherUf()">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+                UF
+                <input type="text" id="outUf" class="form-control" readonly>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <script src="./main/jquery.mask.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./main/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#telefone').mask('00.000-000');
+        });
+    </script>
+
+</body>
+
+</html>
