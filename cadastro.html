@@ -35,143 +35,179 @@
             </div>
         </div>
     </nav>
+    <form action="" method="post" name="formCadastro">
     <div class="container-sm">
         <h2 class="cadastro-tit">Cadastro</h2>
-        <div class="row">
-            <div class="col-md-8">
-                Nome Completo
-                <input type="text" name="" id="" class="form-control">
+        <fieldset class="form-group border p-3">
+            <legend class="w-auto px-2">Dados Pessoais</legend>
+            <div class="row">
+                <div class="col-md-5">
+                    Nome Completo
+                    <input type="text" name="" id="" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                    Data de Nascimento
+                    <input type="date" id="inNascimento" class="form-control" onchange="calcularIdade()" required>
+                </div>
+                <div class="col-md-1">
+                    Idade
+                    <input type="number" id="outIdade" class="form-control" value="" readonly>
+                </div>
+                <div class="col-md-3">
+                    Gênero
+                    <select class="form-select" required>
+                        <option selected>Escolha Seu Gênero</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-md-3">
-                Data de Nascimento
-                <input type="date" id="inNascimento" class="form-control" onchange="calcularIdade()">
+        </fieldset>
+
+        <fieldset class="form-group border p-3">
+            <legend class="w-auto px-2">Informações Saúde</legend>
+            <div class="row">
+                <div class="col-md-3">
+                    Peso
+                    <input type="number" id="inPeso" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                    Altura
+                    <input type="number" name="" id="inAltura" class="form-control" onchange="calcularImc()" required>
+                </div>
+                <div class="col-md-3">
+                    IMC
+                    <input type="number" name="" id="outImc" class="form-control" value="" readonly>
+                </div>
+                <div class="col-md-3">
+                    Possui Plano de Saúde? <br>
+                    <input class="form-check-input" type="radio" name="rdPlSaude" id="rdPlanoS" value="sim" required> Sim
+                    <input class="form-check-input" type="radio" name="rdPlSaude" id="rdPlanon" value="nao" required> Não
+                </div>
             </div>
-            <div class="col-md-1">
-                Idade
-                <input type="number" id="outIdade" class="form-control" value="" readonly>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    Pratica atividade física regularmente? <br>
+                    <input class="form-check-input" type="radio" onchange="habilitaCampoAtividade()" name="rdAtivFisica" id="rdAtivS" value="s"> Sim
+                    <input class="form-check-input" type="radio" onchange="desabilitaCampoAtividade()" name="rdAtivFisica" id="rdAtivN" value="n"> Não
+                </div>
+                <div class="col-md-3">
+                    Já fez cirurgias? <br>
+                    <input class="form-check-input" type="radio" onchange="habilitaCampoCirurgia()" name="rdCirurgia" id="rdCirurgS" value="s"> Sim
+                    <input class="form-check-input" type="radio" onchange="desabilitaCampoCirurgia()" name="rdCirurgia" id="rdCirurgN" value="n"> Não
+                </div>
+                <div class="col-md-3">
+                    Possui Lesão? <br>
+                    <input class="form-check-input" type="radio" onchange="habilitaCampoLesao()" name="rdLesao" id="rdLesaoS" value="s"> Sim
+                    <input class="form-check-input" type="radio" onchange="desabilitaCampoLesao()" name="rdLesao" id="rdLesaoN" value="n"> Não
+                </div>
+                <div class="col-md-3">
+                    Possui Comorbidade? <br>
+                    <input class="form-check-input" type="radio" onchange="habilitaCampoComorbidade()" name="rdComorb" id="rdComorbS" value="s"> Sim
+                    <input class="form-check-input" type="radio" onchange="desabilitaCampoComorbidade()" name="rdComorb" id="rdComorbN" value="n"> Não
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                Peso
-                <input type="number" id="inPeso" class="form-control">
+            <div class="row">
+                <div class="col-md-3">
+                    Informe a atividade
+                    <input type="text" name="inAtiv" id="inAtiv" class="form-control" disabled>
+                </div>
+                <div class="col-md-3">
+                    Informe o procedimento
+                    <input type="text" name="inCirurg"  id="inCirurg" class="form-control" disabled>
+                </div>
+                <div class="col-md-3">
+                    Informe a lesão
+                    <input type="text" id="infLesao" class="form-control" disabled>
+                </div>
+                <div class="col-md-3">
+                    Informe o tipo
+                    <input type="text" id="infComorb" class="form-control" disabled>
+                </div>
             </div>
-            <div class="col-md-2">
-                Altura
-                <input type="number" name="" id="inAltura" class="form-control" onchange="calcularImc()">
+        </fieldset>
+        <fieldset class="form-group border p-3">
+            <legend class="w-auto px-2">Endereço e Dados para Contato</legend>
+            <div class="row">
+                <div class="col-md-3">
+                    Telefone
+                    <input type="tel" id="telefone" class="form-control" placeholder="Somente Números">
+                </div>
+                <div class="col-md-3">
+                    E-mail
+                    <input type="email" id="" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    Endereço
+                    <input type="text" id="logradouro" class="form-control">
+                </div>
+                <div class="col-md-1">
+                    Nº
+                    <input type="number" id="numero" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    CEP
+                    <input type="text" id="cep" class="form-control" maxlength="8">
+                </div>
             </div>
-            <div class="col-md-2">
-                IMC
-                <input type="number" name="" id="outImc" class="form-control" value="" readonly>
+            <div class="row">
+                <div class="col-md-3">
+                    Complemento
+                    <input type="text" id="complemento" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    Bairro
+                    <input type="text" id="bairro" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    Estado
+                    <select class="form-control" id="slEstados" onchange="preencherUf()">
+                        <option value="">Selecione</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espirito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    UF
+                    <input type="text" id="outUf" class="form-control" readonly>
+                </div>
             </div>
-            <div class="col-md-2">
-                Pratica atividade física regularmente? <br>
-                <input class="form-check-input" type="radio" name="rdAtivFisica" id="rdAtiv" value="sim"> Sim
-                <input class="form-check-input" type="radio" name="rdAtivFisica" id="rdAtiv" value="nao"> Não
+        </fieldset>
+        <fieldset>
+            <div class="col-3">
+                <button type="submit" id="button" onclick="" class="btn btn-primary">CADASTRAR</button>
             </div>
-            <div class="col-md-2">
-                Qual?
-                <input type="number" name="" id="inAtiv" class="form-control" value="" readonly>
-            </div>
-            <div class="col-md-2">
-                Gênero
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Escolha Seu Gênero</option>
-                    <option value="1">Masculino</option>
-                    <option value="2">Feminino</option>
-                    <option value="3">Outro</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                Possui Plano de Saúde? <br>
-                <input class="form-check-input" type="radio" name="rdPlSaude" id="rdPlanoS" value="sim"> Sim
-                <input class="form-check-input" type="radio" name="rdPlSaude" id="rdPlanon" value="nao"> Não
-            </div>
-            <div class="col-md-2">
-                Já fez cirurgias? <br>
-                <input class="form-check-input" type="radio" name="rdCirurgia" id="rdPlanoS" value="sim"> Sim
-                <input class="form-check-input" type="radio" name="rdCirurgia" id="rdPlanon" value="nao"> Não
-            </div>
-            <div class="col-md-2">
-                Que procedimento?
-                <input type="text" id="infCirurgia" class="form-control" disabled>
-            </div>
-            
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                Telefone
-                <input type="tel" id="telefone" class="form-control" placeholder="Somente Números">
-            </div>
-            <div class="col-md-3">
-                E-mail
-                <input type="email" id="" class="form-control">
-            </div>
-            <div class="col-md-3">
-                Endereço
-                <input type="text" id="logradouro" class="form-control">
-            </div>
-            <div class="col-md-1">
-                Nº
-                <input type="number" id="numero" class="form-control">
-            </div>
-            <div class="col-md-2">
-                CEP
-                <input type="text" id="cep" class="form-control" maxlength="8">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                Complemento
-                <input type="text" id="complemento" class="form-control">
-            </div>
-            <div class="col-md-2">
-                Bairro
-                <input type="text" id="bairro" class="form-control">
-            </div>
-            <div class="col-md-2">
-                Estado
-                <select class="form-control" id="slEstados" onchange="preencherUf()">
-                    <option value="">Selecione</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espirito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-            </div>
-            <div class="col-md-1">
-                UF
-                <input type="text" id="outUf" class="form-control" readonly>
-            </div>
-        </div>
+        </fieldset>
     </div>
-    </div>
-    
+    </form>
     <script src="./main/jquery-3.6.0.js"></script>
     <script src="./main/jquery.mask.js"></script>
     <script src="./main/mask.js"></script>

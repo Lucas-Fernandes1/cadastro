@@ -16,3 +16,7 @@ input[type=number] {
    appearance: textfield;
 
 }
+
+fieldset{
+    margin: 10px;
+}

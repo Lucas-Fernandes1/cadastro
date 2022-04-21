@@ -1,5 +1,4 @@
 function calcularImc() {
-
     var inPeso = document.getElementById("inPeso").value;
     var inAltura = document.getElementById("inAltura").value;
 
@@ -9,7 +8,7 @@ function calcularImc() {
 
     imc = peso / (altura * altura);
 
-    document.getElementById("outImc").value = imc.toFixed(2);   
+    document.getElementById("outImc").value = imc.toFixed();   
 }
 
 function calcularIdade() {
@@ -49,6 +48,77 @@ function preencherUf() {
     document.getElementById("outUf").value = slEstados;
 }
 
-function habilitaCampo(){
-    
+function habilitaCampoAtividade(){
+    var rdAtivS = document.getElementById("rdAtivS").value;
+    var inAtiv = document.querySelector("#inAtiv");
+
+    if (rdAtivS == "s") {
+        inAtiv.disabled = false;
+    }
+    console.log(rdAtivS)
+}
+
+function desabilitaCampoAtividade(){
+    var rdAtivN = document.getElementById("rdAtivN").value;
+    var inAtiv = document.querySelector("#inAtiv");
+
+    if (rdAtivN == "n") {
+        inAtiv.disabled = true;
+    } 
+
+    console.log(rdAtivN)
+}
+
+function habilitaCampoCirurgia(){
+    var rdCirurgS = document.getElementById("rdCirurgS").value;
+    var inCirurg = document.getElementById("inCirurg");
+
+    if (rdCirurgS == "s") {
+        inCirurg.disabled = false;
+    }
+}
+
+function desabilitaCampoCirurgia(){
+    var rdCirurgN = document.getElementById("rdCirurgN").value;
+    var inCirurg = document.getElementById("inCirurg");
+
+    if (rdCirurgN == "n") {
+        inCirurg.disabled = true;
+    } 
+}
+
+function habilitaCampoLesao(){
+    var rdLesaoS = document.getElementById("rdLesaoS").value;
+    var infLesao = document.getElementById("infLesao");
+
+    if (rdLesaoS == "s") {
+        infLesao.disabled = false;
+    }
+}
+
+function desabilitaCampoLesao(){
+    var rdLesaoN = document.getElementById("rdLesaoN").value;
+    var infLesao = document.getElementById("infLesao");
+
+    if (rdLesaoN == "n") {
+        infLesao.disabled = true;
+    } 
+}
+
+function habilitaCampoComorbidade(){
+    var rdComorbS = document.getElementById("rdComorbS").value;
+    var infComorb = document.getElementById("infComorb");
+
+    if (rdComorbS == "s") {
+        infComorb.disabled = false;
+    }
+}
+
+function desabilitaCampoComorbidade(){
+    var rdComorbN = document.getElementById("rdComorbN").value;
+    var infComorb = document.getElementById("infComorb");
+
+    if (rdComorbN == "n") {
+        infComorb.disabled = true;
+    } 
 }
